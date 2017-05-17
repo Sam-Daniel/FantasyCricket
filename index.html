@@ -1,0 +1,97 @@
+
+<html ng-app = "myModule">
+<head>
+  <script src="script/angular.js"></script>
+  <script src="script/custom.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+  <div class="main" ng-controller = "myController">
+    <h2>IPL PLAYERS 2017</h2>
+    <input type="text" placeholder="Search for a player..." ng-model="searchText" />
+    <br><br>
+    <table align="center">
+      <thead>
+        <tr>
+          <th ng-click="sortData('playerId')">Player ID <div ng-class="getSortClass('playerId')"></div></th>
+          <!-- <th>DOB</th> -->
+          <th>Name</th>
+          <th>Nationality</th>
+          <th ng-click="sortData('price')">Price <div ng-class="getSortClass('price')"></div></th>
+          <!-- <th>Right Arm Bat</th>
+          <th>Right Arm Bowl</th> -->
+          <th>Role</th>
+          <!-- <th>Short Name</th> -->
+          <th ng-click="sortData('teamId')">Team ID <div ng-class="getSortClass('teamId')"></div></th>
+          <th>Team</th>
+          <th>Uncapped</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="player in players | orderBy:sortColumn:reverseSort | filter:searchText">
+          <td ng-click="add(player)">{{player.playerId}}</td>
+          <!-- <td>{{player.dob}}</td> -->
+          <td>{{player.fullName}}</td>
+          <td>{{player.nationality}}</td>
+          <td>{{player.price}}</td>
+          <!-- <td>{{player.rightArmBat}}</td>
+          <td>{{player.rightArmBowl}}</td> -->
+          <td>{{player.role}}</td>
+          <!-- <td>{{player.shortName}}</td> -->
+          <td>{{player.teamId}}</td>
+          <td>{{player.teamAbbreviation}}</td>
+          <td>{{player.uncapped}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <br><br>
+    <hr>
+    <h2>SQUAD</h2>
+    <hr>
+    Subs left: {{subs}}
+    <hr>
+    <div id="squadBalance">
+      Batsman(4-5) <div ng-class="batValidate(squad.player)"></div>Bowler(2-5) <div ng-class="bowValidate(squad)"></div>Keeper(1) <div ng-class="keepValidate(squad)"></div>
+      All rounder(1-4) <div ng-class="allValidate(squad)"></div>Eleven Players <div ng-class="eleValidate(squad)"></div>Franchise Spread <div ng-class="franValidate(squad)"></div>
+      Overseas limit <div ng-class="overValidate(squad)"></div>Uncapped Quota <div ng-class="uncapValidate(squad)"></div>
+    </div>
+    <table>
+      <table align="center">
+        <thead>
+          <tr>
+            <th>Player ID</th>
+            <!-- <th>DOB</th> -->
+            <th>Name</th>
+            <th>Nationality</th>
+            <th>Price</th>
+            <!-- <th>Right Arm Bat</th>
+            <th>Right Arm Bowl</th> -->
+            <th>Role</th>
+            <!-- <th>Short Name</th> -->
+            <th>Team ID</th>
+            <th>Team</th>
+            <th>Uncapped</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="player in squad">
+            <td ng-click="remove(player)">{{player.playerId}}</td>
+            <!-- <td>{{player.dob}}</td> -->
+            <td>{{player.fullName}}</td>
+            <td>{{player.nationality}}</td>
+            <td>{{player.price}}</td>
+            <!-- <td>{{player.rightArmBat}}</td>
+            <td>{{player.rightArmBowl}}</td> -->
+            <td>{{player.role}}</td>
+            <!-- <td>{{player.shortName}}</td> -->
+            <td>{{player.teamId}}</td>
+            <td>{{player.teamAbbreviation}}</td>
+            <td>{{player.uncapped}}</td>
+          </tr>
+        </tbody>
+    </table>
+    <br><br>
+  </div>
+</body>
+</html>

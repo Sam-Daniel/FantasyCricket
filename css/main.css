@@ -1,0 +1,84 @@
+/* Custom CSS */
+
+.main {
+  text-align: center;
+}
+
+.arrow-up{
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid white;
+  display: inline-block;
+}
+
+.arrow-down{
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid white;
+  display: inline-block;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    height: 35px;
+    cursor: pointer;
+}
+
+input[type=text] {
+    width: 150px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    /*padding: 12px 20px 12px 40px;*/
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 50%;
+}
+
+#squadBalance{
+  text-align: center;
+  padding: 8px;
+  /*background-color: #4CAF50;
+  color: white;*/
+  height: 35px;
+}
+
+.circle-red{
+	width: 10px;
+	height: 10px;
+	background: red;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+  display: inline-block;
+}
+
+.circle-green{
+	width: 10px;
+	height: 10px;
+	background: green;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+  display: inline-block;
+}
