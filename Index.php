@@ -1,4 +1,4 @@
-
+<?php
 <html ng-app = "myModule">
 <head>
   <script src="script/angular.js"></script>
@@ -95,3 +95,4 @@
   </div>
 </body>
 </html>
+?>
